@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: idtdre_development
+  database: db/idtdre_development
 
 test:
   <<: *default
-  database: idtdre_test
+  database: db/idtdre_test
 
 production:
   <<: *default
-  database: idtdre_production
+  database: db/idtdre_production

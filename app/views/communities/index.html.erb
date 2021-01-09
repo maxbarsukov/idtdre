@@ -8,7 +8,7 @@
   <% @communities.each do |community| %>
     <div class="card">
       <h3><%= link_to community.name, community_path %></h3>
-      <%= simple_format community.bio %>
+      <%= simple_format community.rules %>
     </div>
   <% end %>
 <% else %>

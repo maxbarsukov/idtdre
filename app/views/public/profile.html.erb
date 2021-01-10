@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-8">
-
+    <%= render partial: "posts/list", locals: { posts: @posts} %>
   </div>
 
   <div class="col-sm-4">
@@ -10,8 +10,7 @@
       <p><%= @profile.full_name %></p>
     <% end %>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam optio qui. Ab accusamus at doloremque illo impedit laborum, laudantium maiores nisi pariatur perferendis quia, rerum sed ullam! Dignissimos, labore! Aliquam at beatae consequatur delectus eaque et facere harum illum laborum libero mollitia nesciunt nobis perspiciatis quae quo sed sunt, unde ut. Alias, iusto, nulla! Exercitationem officiis placeat qui voluptatibus.Adipisci aliquam aliquid animi architecto aut cupiditate dolore dolores doloribus dolorum earum, eligendi exercitationem fugit ipsam itaque labore maiores molestiae mollitia natus nisi numquam officiis ratione sequi, tempore voluptate voluptatibus. Alias consectetur dolorum ipsum magni molestiae, mollitia nemo numquam omnis quam, quasi, quia soluta tempora voluptatibus? A ad asperiores ipsa, laudantium nam, nostrum officia possimus quas, quasi ratione velit veritatis! Adipisci atque beatae corporis cumque earum harum ipsam necessitatibus porro, quos ratione similique, ut velit vitae voluptate voluptatibus. Atque in rem saepe voluptas. Consectetur corporis cumque id qui sint soluta.</p>
-
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam optio qui. Ab accusamus at doloremque illo impedit laborum, laudantium maiores nisi pariatur perferendis quia, rerum sed ullam! Dignissimos, labore! Aliquam at beatae consequatur delectus eaque et facere harum illum laborum libero mollitia nesciunt nobis perspiciatis quae quo sed sunt, unde ut. Alias, iusto, nulla!</p>
     <p>Cake day: <%= @profile.created_at.strftime("%d/%m/%Y") %></p>
   </div>
 </div>

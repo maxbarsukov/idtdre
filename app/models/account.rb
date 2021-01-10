@@ -1,6 +1,6 @@
 class Account < ApplicationRecord
   has_many :posts
-  has_many :communities
+  has_many :communities, through: :subscriptions
 
   validates_presence_of :username
 

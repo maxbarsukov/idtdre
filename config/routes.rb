@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  resource :subscriptions
+
   root to: 'public#index'
 end

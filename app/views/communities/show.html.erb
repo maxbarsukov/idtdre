@@ -1,16 +1,27 @@
-<%= link_to "Create new post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
-
-<h3><%= @community.name %></h3>
+<div class="row mb-4">
+  <div class="col-sm-8">
+    <h3><%= @community.name %></h3>
+  </div>
+  <div class="col-sm-4">
+    <% if @is_subscribed %>
+      <%= link_to "Create new post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
+    <% else %>
+      <%= render partial: "communities/subscribe" %>
+    <% end %>
+  </div>
+</div>
 <div class="row">
   <div class="col-sm-8">
     <%= render partial: "posts/list", locals: { posts: @posts } %>
   </div>
-
   <div class="col-sm-4">
-    <div class="card">
+    <div class="card p-3">
+      <p class="h5">About this community</p>
+      <p class="mt-2"><%= @community.summary %></p>
 
+      <p><%= pluralize @subscriber_count, "member" %></p>
     </div>
-    <p><%= pluralize @subscriber_count, "member" %></p>
+
     <small>
       <%= simple_format @community.rules %>
     </small>

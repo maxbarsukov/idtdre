@@ -6,7 +6,7 @@
     <% if @is_subscribed %>
       <%= link_to "Create new post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
     <% else %>
-      <%= render partial: "communities/subscribe" %>
+      <%= render partial: "communities/subscribe", local: { community_id: @community.id } %>
     <% end %>
   </div>
 </div>

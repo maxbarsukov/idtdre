@@ -1,9 +1,14 @@
 <%= link_to "Create new post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
 
-<%= @community.name %>
+<h3><%= @community.name %></h3>
+<div class="row">
+  <div class="col-sm-8">
+    <%= render partial: "posts/list", locals: { posts: @posts } %>
+  </div>
 
-<%= render partial: "posts/list", locals: { posts: @posts } %>
-
-<small>
-  <%= simple_format @community.rules %>
-</small>
+  <div class="col-sm-4">
+    <small>
+      <%= simple_format @community.rules %>
+    </small>
+  </div>
+</div>

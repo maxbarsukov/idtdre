@@ -7,7 +7,7 @@
     <p class="h4"><%= @profile.username %></p>
 
     <% unless @profile.full_name.blank? %>
-      <%= @profile.full_name %>
+      <p><%= @profile.full_name %></p>
     <% end %>
 
     <p>Cake day: <%= @profile.created_at.strftime("%d/%m/%Y") %></p>

@@ -1,4 +1,4 @@
-class SubscriptionController < ApplicationController
+class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params)
     @subscription.account_id = current_account.id

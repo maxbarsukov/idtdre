@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.js {
         if @comment.save
-          redirect_to "comments/create"
+          @comments = Comment.where(post_id: @comment.post_id)
+          render "comments/create"
         else
           # unable to save
         end

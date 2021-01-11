@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resource :subscriptions
+  resource :comments, only: [:create]
 
   root to: 'public#index'
 end

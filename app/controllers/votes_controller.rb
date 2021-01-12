@@ -1,7 +1,10 @@
 class VotesController < ApplicationController
   def create
-    post_id = params[:vote][:post_id]
-    vote = Vote.new(vote_params)
+    post_id = params[:post_id]
+
+    vote = Vote.new
+    vote.post_id = params[:post_id]
+    vote.upvote = params[:upvote]
     vote.account_id = current_account.id
 
     # Check if vote by this user exists

@@ -18,13 +18,10 @@ class VotesController < ApplicationController
         else
           # Save new vote
           @success = vote.save
-
-          @post = Post.find(post_id)
-          @total_upvotes = @post.upvotes
-          @total_downvotes = @post.downvotes
         end
 
-      render "votes/create"
+        @post = Post.find(post_id)
+        render "votes/create"
       }
     end
   end

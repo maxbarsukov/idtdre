@@ -7,6 +7,12 @@ class Post < ApplicationRecord
 
   def score
     # difference between upvotes and downvotes
-    0
+    if upvotes > 0 || downvotes > 0
+      upvotes > 0 ?
+        (upvotes - downvotes) :
+        (downvotes * (-1))
+    else
+      0
+    end
   end
 end

@@ -5,7 +5,7 @@ class Vote < ApplicationRecord
   validates_presence_of :account_id, scope: :post_id
 
   after_create :increment_vote, :add_karma
-  after_destroy :decrement_vote, :subtract_karma
+  after_destroy :decrement_vote, :remove_karma
 
   private
 
@@ -21,11 +21,11 @@ class Vote < ApplicationRecord
 
   def add_karma
     account = Account.find(account_id)
-    account.increment(:karma).save
+    account.increment(:karma, 1).save
   end
 
-  def subtract_karma
+  def remove_karma
     account = Account.find(account_id)
-    account.decrement(:karma).save
+    account.decrement(:karma, 1).save
   end
 end

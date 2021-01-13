@@ -7,6 +7,6 @@ class PublicController < ApplicationController
   
   def profile
     @profile = Account.find_by_username(params[:username])
-    @posts = @profile.posts
+    @posts = @profile.posts.limit(30).sort_by{ |p| p.score }.reverse
   end
 end

@@ -6,11 +6,15 @@
   <div class="col-sm-4">
     <p class="h4"><%= @profile.username %></p>
 
+    <div class="karma float-left mt-2 mr-2">
+      <span class="fa fa-star text-warning"></span>
+      <%= @profile.karma %>
+    </div>
+
     <% unless @profile.full_name.blank? %>
       <p><%= @profile.full_name %></p>
     <% end %>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim numquam optio qui. Ab accusamus at doloremque illo impedit laborum, laudantium maiores nisi pariatur perferendis quia, rerum sed ullam! Dignissimos, labore! Aliquam at beatae consequatur delectus eaque et facere harum illum laborum libero mollitia nesciunt nobis perspiciatis quae quo sed sunt, unde ut. Alias, iusto, nulla!</p>
+    <%= simple_format @profile.bio %>
     <p>Cake day: <%= @profile.created_at.strftime("%d/%m/%Y") %></p>
   </div>
 </div>

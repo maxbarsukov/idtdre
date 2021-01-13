@@ -2,11 +2,13 @@
   <div class="card p-3 mb-3">
     <div class="row">
       <div class="col-1 text-center">
-        <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
-          <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
-          <span class="font-weight-bold score"><%= post.score %></span>
-          <div class="fa fa-arrow-down downvote  <%= is_downvoted post %>"></div>
-        </div>
+        <% if account_signed_in? %>
+          <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
+            <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
+            <span class="font-weight-bold score"><%= post.score %></span>
+            <div class="fa fa-arrow-down downvote  <%= is_downvoted post %>"></div>
+          </div>
+        <% end %>
       </div>
       <div class="col-11">
 
